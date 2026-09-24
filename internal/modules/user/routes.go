@@ -1,7 +1,7 @@
 package user
 
 import (
-	"demo/internal/modules/auth"
+	"fiberkit/internal/modules/auth"
 
 	"github.com/gofiber/fiber/v3"
 )

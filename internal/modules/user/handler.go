@@ -3,8 +3,8 @@ package user
 import (
 	"strings"
 
-	"demo/internal/database"
-	"demo/internal/shared"
+	"fiberkit/internal/database"
+	"fiberkit/internal/shared"
 
 	"github.com/gofiber/fiber/v3"
 )

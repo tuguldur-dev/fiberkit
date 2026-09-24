@@ -3,7 +3,7 @@ package auth
 import (
 	"log"
 
-	"demo/internal/database"
+	"fiberkit/internal/database"
 
 	"golang.org/x/crypto/bcrypt"
 )

@@ -4,8 +4,8 @@ import (
 	"errors"
 	"strings"
 
-	"demo/internal/database"
-	"demo/internal/shared"
+	"fiberkit/internal/database"
+	"fiberkit/internal/shared"
 
 	"github.com/gofiber/fiber/v3"
 	"github.com/gofiber/fiber/v3/middleware/session"

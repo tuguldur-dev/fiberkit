@@ -1,10 +1,10 @@
 package app
 
 import (
-	"demo/docs"
-	"demo/internal/modules/auth"
-	"demo/internal/modules/user"
-	"demo/internal/web"
+	"fiberkit/docs"
+	"fiberkit/internal/modules/auth"
+	"fiberkit/internal/modules/user"
+	"fiberkit/internal/web"
 
 	swaggo "github.com/gofiber/contrib/v3/swaggo"
 	"github.com/gofiber/fiber/v3"

@@ -1,7 +1,7 @@
 package web
 
 import (
-	"demo/internal/shared"
+	"fiberkit/internal/shared"
 
 	"github.com/gofiber/fiber/v3"
 )

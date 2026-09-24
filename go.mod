@@ -1,4 +1,4 @@
-module demo
+module fiberkit
 
 go 1.27.1
 

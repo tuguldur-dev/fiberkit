@@ -1,10 +1,10 @@
 package main
 
 import (
-	"demo/internal/app"
-	"demo/internal/database"
-	"demo/internal/modules/auth"
-	"demo/internal/modules/user"
+	"fiberkit/internal/app"
+	"fiberkit/internal/database"
+	"fiberkit/internal/modules/auth"
+	"fiberkit/internal/modules/user"
 	"flag"
 	"log"
 
