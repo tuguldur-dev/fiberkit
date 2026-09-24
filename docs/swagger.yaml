@@ -1,0 +1,196 @@
+basePath: /api/v1
+definitions:
+  auth.Account:
+    properties:
+      created_at:
+        type: string
+      email:
+        example: admin@example.com
+        type: string
+      id:
+        example: 1
+        type: integer
+    type: object
+  auth.AccountResponse:
+    properties:
+      account:
+        $ref: '#/definitions/auth.Account'
+      success:
+        example: true
+        type: boolean
+    type: object
+  auth.LoginInput:
+    properties:
+      email:
+        example: admin@example.com
+        type: string
+      password:
+        example: admin
+        type: string
+    type: object
+  shared.ErrorResponse:
+    properties:
+      error:
+        example: name is required
+        type: string
+      success:
+        example: false
+        type: boolean
+    type: object
+  user.CreateUserInput:
+    properties:
+      name:
+        example: Ada Lovelace
+        type: string
+    type: object
+  user.User:
+    properties:
+      created_at:
+        type: string
+      id:
+        example: 1
+        type: integer
+      name:
+        example: Ada Lovelace
+        type: string
+    type: object
+  user.UserResponse:
+    properties:
+      success:
+        example: true
+        type: boolean
+      user:
+        $ref: '#/definitions/user.User'
+    type: object
+  user.UsersResponse:
+    properties:
+      success:
+        example: true
+        type: boolean
+      users:
+        items:
+          $ref: '#/definitions/user.User'
+        type: array
+    type: object
+info:
+  contact: {}
+  description: Simple Fiber template with HTML includes, Swagger, GORM, SQLite, and
+    session auth
+  title: Fiber Template API
+  version: "1.0"
+paths:
+  /login:
+    post:
+      consumes:
+      - application/json
+      description: Start a session cookie (session_id)
+      parameters:
+      - description: Login credentials
+        in: body
+        name: credentials
+        required: true
+        schema:
+          $ref: '#/definitions/auth.LoginInput'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/auth.AccountResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/shared.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/shared.ErrorResponse'
+      summary: Login
+      tags:
+      - auth
+  /me:
+    get:
+      description: Get the logged-in account
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/auth.AccountResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/shared.ErrorResponse'
+      security:
+      - CookieAuth: []
+      summary: Current account
+      tags:
+      - auth
+  /users:
+    get:
+      description: Get all users from SQLite
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/user.UsersResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/shared.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/shared.ErrorResponse'
+      security:
+      - CookieAuth: []
+      summary: List users
+      tags:
+      - users
+    post:
+      consumes:
+      - application/json
+      description: Create a user in SQLite
+      parameters:
+      - description: User to create
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/user.CreateUserInput'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/user.UserResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/shared.ErrorResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/shared.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/shared.ErrorResponse'
+      security:
+      - CookieAuth: []
+      summary: Create user
+      tags:
+      - users
+schemes:
+- http
+securityDefinitions:
+  CookieAuth:
+    in: cookie
+    name: session_id
+    type: apiKey
+swagger: "2.0"

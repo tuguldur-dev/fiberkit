@@ -1,0 +1,165 @@
+:root {
+	color-scheme: light;
+	--bg: #f6f4ef;
+	--ink: #1d1b16;
+	--muted: #5c574d;
+	--card: #fffdf8;
+	--line: #ddd6c8;
+	--accent: #0f6b5c;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font: 16px/1.5 system-ui, sans-serif;
+	background: var(--bg);
+	color: var(--ink);
+}
+
+.container {
+	width: min(44rem, calc(100% - 2rem));
+	margin-inline: auto;
+}
+
+.site-header,
+.site-nav,
+.site-footer {
+	border-bottom: 1px solid var(--line);
+}
+
+.site-header {
+	padding: 1.5rem 0 0.75rem;
+}
+
+.brand {
+	color: inherit;
+	font-weight: 700;
+	text-decoration: none;
+	font-size: 1.25rem;
+}
+
+.site-header p,
+.site-footer {
+	color: var(--muted);
+}
+
+.site-nav {
+	padding: 0.75rem 0;
+}
+
+.nav-row,
+.auth {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem;
+}
+
+.site-nav a,
+.site-nav button.link {
+	margin-right: 1rem;
+	color: var(--accent);
+}
+
+.site-nav button.link {
+	margin-right: 0;
+	background: none;
+	border: 0;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+}
+
+.auth {
+	color: var(--muted);
+	justify-content: flex-end;
+}
+
+.auth form {
+	margin: 0;
+}
+
+main.container {
+	padding: 1.5rem 0 3rem;
+}
+
+h1,
+h2 {
+	margin: 0 0 0.75rem;
+}
+
+.row {
+	display: flex;
+	gap: 0.5rem;
+	margin-bottom: 2rem;
+}
+
+input,
+button {
+	font: inherit;
+	padding: 0.65rem 0.8rem;
+	border-radius: 0.5rem;
+	border: 1px solid var(--line);
+}
+
+input {
+	flex: 1;
+	background: var(--card);
+}
+
+button,
+.list {
+	background: var(--card);
+}
+
+button {
+	background: var(--accent);
+	color: white;
+	border-color: var(--accent);
+	cursor: pointer;
+}
+
+.list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	border: 1px solid var(--line);
+	border-radius: 0.75rem;
+	overflow: hidden;
+}
+
+.list li {
+	padding: 0.8rem 1rem;
+	border-top: 1px solid var(--line);
+}
+
+.list li:first-child {
+	border-top: 0;
+}
+
+.empty,
+.empty-state,
+.hint {
+	color: var(--muted);
+}
+
+.stack {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	max-width: 22rem;
+	margin-bottom: 1rem;
+}
+
+.error {
+	color: #8b2e2e;
+}
+
+.site-footer {
+	border-top: 1px solid var(--line);
+	border-bottom: 0;
+	padding: 1rem 0 2rem;
+}

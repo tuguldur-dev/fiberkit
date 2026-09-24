@@ -1,0 +1,12 @@
+<section>
+	<h1>Login</h1>
+	{{if .Error}}
+	<p class="error">Invalid email or password.</p>
+	{{end}}
+	<form class="stack" method="post" action="/login">
+		<input type="email" name="email" placeholder="Email" required />
+		<input type="password" name="password" placeholder="Password" required />
+		<button type="submit">Login</button>
+	</form>
+	<p class="hint">Default account: <code>admin@example.com</code> / <code>admin</code></p>
+</section>

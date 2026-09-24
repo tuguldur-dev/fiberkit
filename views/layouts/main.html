@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{{.Title}} · Fiber Template</title>
+		<link rel="stylesheet" href="/css/app.css" />
+	</head>
+	<body>
+		{{template "partials/header" .}}
+		{{template "partials/nav" .}}
+		<main class="container">
+			{{embed}}
+		</main>
+		{{template "partials/footer" .}}
+	</body>
+</html>
