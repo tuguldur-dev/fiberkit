@@ -6,7 +6,7 @@ require (
 	github.com/glebarez/sqlite v1.11.0
 	github.com/gofiber/contrib/v3/swaggo v1.0.12
 	github.com/gofiber/fiber/v3 v3.5.0
-	github.com/gofiber/template/html/v3 v3.0.9
+	github.com/gofiber/template/html/v3 v3.0.10
 	github.com/swaggo/swag v1.16.6
 	golang.org/x/crypto v0.57.0
 	gorm.io/gorm v1.31.2
@@ -27,7 +27,7 @@ require (
 	github.com/go-openapi/swag/typeutils v0.29.2 // indirect
 	github.com/go-openapi/swag/yamlutils v0.29.2 // indirect
 	github.com/gofiber/schema v1.8.8 // indirect
-	github.com/gofiber/template/v2 v2.1.2 // indirect
+	github.com/gofiber/template/v2 v2.1.3 // indirect
 	github.com/gofiber/utils/v2 v2.6.1 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
